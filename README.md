@@ -1047,7 +1047,6 @@ JavaScript
 * Saber o que é **JIT compilation**
 * Compreender a função do **Node.js**
 * Saber distinguir **JavaScript client-side** de **JavaScript server-side**
-
 # Aula 14 - Operadores Lógicos e Aritméticos
 
 ## ✅ **Parte 1: Conceito – Operadores Aritméticos e Lógicos em JavaScript**
@@ -5854,7 +5853,6 @@ Ele permite que você:
 * Crie servidores na nuvem sob demanda
 * Escale sua aplicação com flexibilidade
 * Rode APIs, bancos, ambientes de CI/CD, etc.
-
 # Aula 40 - SSH
 
 ## 🎓 AULA: ACESSO SSH E O PROTOCOLO DE COMUNICAÇÃO SEGURA
@@ -6014,7 +6012,6 @@ ls -la
 | Chave privada | Fica com você, usada para autenticar                   |
 
 ---
-
 # Aula 41 - AWS - Instância EC2
 
 
@@ -6656,3 +6653,1120 @@ Com o Security Group corretamente configurado, sua instância EC2 pode:
 * Ser acessada remotamente de forma controlada
 
 Esse é um dos conceitos mais importantes de infraestrutura na AWS.
+
+# Aula 43 - Conceitos de ReactJS
+
+## ⚛️ Introdução ao React.js
+
+### 🧠 O que é React.js?
+
+React é uma biblioteca JavaScript criada pelo Meta para construção de interfaces web modernas e dinâmicas.
+
+O React permite criar aplicações utilizando **componentes reutilizáveis**, facilitando organização, manutenção e escalabilidade do frontend.
+
+Ele é amplamente utilizado para desenvolver:
+
+* Dashboards
+* Sistemas web
+* E-commerces
+* Aplicações SPA (Single Page Application)
+* Interfaces modernas e responsivas
+
+---
+
+## 🖥️ Diferença entre Frontend Tradicional e React
+
+### 🔹 Frontend Tradicional
+
+No modelo tradicional:
+
+* Cada navegação geralmente recarrega a página inteira
+* Manipulação manual do DOM com JavaScript puro
+* Código menos reutilizável
+* Maior acoplamento entre HTML, CSS e JS
+
+Exemplo:
+
+* PHP renderizando HTML diretamente
+* jQuery manipulando elementos manualmente
+
+---
+
+### ⚛️ Frontend com React
+
+Com React:
+
+* A página não precisa recarregar completamente
+* Componentes são reutilizáveis
+* Atualizações são rápidas e dinâmicas
+* Utiliza Virtual DOM para melhor performance
+* Organização mais moderna e escalável
+
+Exemplo:
+
+* Componentes como:
+
+  * `<Header />`
+  * `<Sidebar />`
+  * `<Card />`
+
+---
+
+## 🧱 Como criar a base de um projeto React
+
+Hoje, a forma mais moderna é utilizando o Vite.
+
+---
+
+### 📦 1. Criar projeto
+
+No terminal:
+
+```bash
+npm create vite@latest meu-projeto
+```
+
+---
+
+### ⚛️ 2. Escolher tecnologias
+
+Selecione:
+
+* Framework: `React`
+* Variant:
+
+  * `JavaScript`
+  * ou `TypeScript`
+
+---
+
+### 📂 3. Entrar na pasta
+
+```bash
+cd meu-projeto
+```
+
+---
+
+### 📦 4. Instalar dependências
+
+```bash
+npm install
+```
+
+---
+
+### ▶️ 5. Rodar projeto
+
+```bash
+npm run dev
+```
+
+---
+
+### 🌐 6. Abrir no navegador
+
+O terminal mostrará algo parecido com:
+
+```text
+http://localhost:5173
+```
+
+---
+
+## 📁 Estrutura inicial do React
+
+```text
+src/
+├── App.jsx
+├── main.jsx
+├── assets/
+└── components/
+```
+
+| Arquivo       | Função                    |
+| ------------- | ------------------------- |
+| `main.jsx`    | Ponto de entrada          |
+| `App.jsx`     | Componente principal      |
+| `components/` | Componentes reutilizáveis |
+
+---
+
+## ✅ Conclusão
+
+O React revolucionou o desenvolvimento frontend ao introduzir:
+
+* Componentização
+* Reatividade
+* Reutilização de código
+* Melhor organização de aplicações modernas
+
+Hoje ele é uma das principais tecnologias do mercado para desenvolvimento web frontend.
+# Aula 44 - Componentes no ReactJS
+
+## ⚛️ Componentes no React.js
+
+### 🧠 O que são componentes?
+
+No React, componentes são blocos reutilizáveis de interface.
+
+Eles permitem dividir a aplicação em pequenas partes organizadas, como:
+
+* Header
+* Menu
+* Card
+* Botão
+* Formulário
+
+---
+
+## 🔹 Componentes Funcionais
+
+Hoje, o padrão mais usado no React são os **componentes funcionais**.
+
+Exemplo:
+
+```jsx id="3kwx0l"
+function Header() {
+  return <h1>Minha Aplicação</h1>;
+}
+```
+
+Ou usando arrow function:
+
+```jsx id="c5xj96"
+const Header = () => {
+  return <h1>Minha Aplicação</h1>;
+};
+```
+
+Uso:
+
+```jsx id="7u8q58"
+<Header />
+```
+
+---
+
+## 📦 Props
+
+Props significa **properties**.
+
+São valores enviados de um componente pai para um componente filho.
+
+---
+
+## 🔧 Exemplo com Props
+
+```jsx id="3z9j1w"
+function Card(props) {
+  return <h2>{props.nome}</h2>;
+}
+```
+
+Uso:
+
+```jsx id="mhy54j"
+<Card nome="Rafael" />
+<Card nome="Maria" />
+```
+
+Resultado:
+
+```text id="rxnn3j"
+Rafael
+Maria
+```
+
+---
+
+## ✅ Desestruturação de Props
+
+Forma moderna:
+
+```jsx id="89e0g0"
+function Card({ nome }) {
+  return <h2>{nome}</h2>;
+}
+```
+
+---
+
+## 🧱 Benefícios dos Componentes
+
+* Reutilização de código
+* Organização
+* Facilidade de manutenção
+* Separação de responsabilidades
+
+---
+
+## ✅ Resumo
+
+Componentes são a base do React.
+Com componentes funcionais e props, conseguimos criar interfaces reutilizáveis, organizadas e dinâmicas.
+# Aula 45 - Montando telas com ReactJS
+
+## ⚛️ Montando Páginas com Componentes no React.js
+
+No React, páginas são construídas através da composição de componentes reutilizáveis.
+
+Ao invés de criar um HTML gigante, dividimos a interface em pequenas partes organizadas.
+
+---
+
+## 🧱 Exemplo de Estrutura
+
+Uma página pode ser separada em:
+
+```text id="k9z9i7"
+Página
+├── Header
+├── Sidebar
+├── Content
+├── Card
+└── Footer
+```
+
+Cada parte vira um componente independente.
+
+---
+
+## 🔹 Exemplo de Componentes
+
+## Header.jsx
+
+```jsx id="89m90n"
+const Header = () => {
+  return <h1>Meu Sistema</h1>;
+};
+
+export default Header;
+```
+
+---
+
+## Footer.jsx
+
+```jsx id="upx8xg"
+const Footer = () => {
+  return <footer>© 2026</footer>;
+};
+
+export default Footer;
+```
+
+---
+
+## Card.jsx
+
+```jsx id="1igv10"
+const Card = ({ titulo }) => {
+  return <div>{titulo}</div>;
+};
+
+export default Card;
+```
+
+---
+
+## 📄 Montando a Página
+
+## App.jsx
+
+```jsx id="7mksf0"
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import Card from "./components/Card";
+
+function App() {
+  return (
+    <div>
+      <Header />
+
+      <Card titulo="Usuários" />
+      <Card titulo="Relatórios" />
+
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+```
+
+---
+
+## 📁 Organização Recomendada
+
+```text id="b3pk5r"
+src/
+├── components/
+├── pages/
+├── services/
+└── App.jsx
+```
+
+| Pasta      | Função                    |
+| ---------- | ------------------------- |
+| components | Componentes reutilizáveis |
+| pages      | Telas do sistema          |
+| services   | APIs e integrações        |
+
+---
+
+## ✅ Benefícios
+
+* Reutilização
+* Organização
+* Facilidade de manutenção
+* Escalabilidade
+
+---
+
+## ✅ Resumo
+
+No React, páginas são montadas unindo componentes menores.
+Essa abordagem torna o frontend mais organizado, reutilizável e fácil de evoluir.
+# Aula 46 - Estados, Eventos e Renderização
+## ⚛️ Estados, Eventos e Renderização no React.js
+
+No React, a interface muda dinamicamente através de **estados** e **eventos**.
+
+---
+
+## 🧠 Estados (`useState`)
+
+Estados armazenam informações que podem mudar na tela.
+
+Exemplo:
+
+```jsx id="jlwmx6"
+import { useState } from "react";
+
+function Contador() {
+  const [numero, setNumero] = useState(0);
+
+  return (
+    <div>
+      <h1>{numero}</h1>
+
+      <button onClick={() => setNumero(numero + 1)}>
+        Somar
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+## 🖱️ Eventos
+
+Eventos capturam ações do usuário:
+
+* Clique
+* Digitação
+* Submit
+* Mouse
+
+Exemplo:
+
+```jsx id="oqb2fo"
+<button onClick={() => alert("Clicou!")}>
+  Clique aqui
+</button>
+```
+
+---
+
+## ✍️ Capturando Input
+
+```jsx id="ggl0ak"
+function Formulario() {
+  const [nome, setNome] = useState("");
+
+  return (
+    <input
+      type="text"
+      onChange={(e) => setNome(e.target.value)}
+    />
+  );
+}
+```
+
+---
+
+## 🔄 Renderização Dinâmica
+
+O React atualiza a interface automaticamente quando o estado muda.
+
+---
+
+## 🔹 Condicional
+
+```jsx id="quwpr5"
+{nome ? <h1>Olá {nome}</h1> : <h1>Digite seu nome</h1>}
+```
+
+---
+
+## 🔹 Listas com `map`
+
+```jsx id="9r8sxy"
+const usuarios = ["Ana", "Carlos"];
+
+{
+  usuarios.map((usuario) => (
+    <p key={usuario}>{usuario}</p>
+  ));
+}
+```
+
+---
+
+## ✅ Benefícios
+
+* Interface reativa
+* Atualização automática
+* Código organizado
+* Melhor experiência do usuário
+
+---
+
+## ✅ Resumo
+
+Estados controlam dados da tela, eventos capturam ações do usuário e a renderização dinâmica atualiza a interface automaticamente no React.
+# Aula 47 - Estilização e interface
+## 🎨 Estilização e Construção de Interface no React.js
+
+No React, a interface é construída com componentes e estilizada usando CSS, bibliotecas ou frameworks modernos.
+
+---
+
+## 🧱 Construindo Interfaces
+
+As telas normalmente são divididas em componentes:
+
+```text id="kq4u9z"
+Página
+├── Navbar
+├── Sidebar
+├── Content
+└── Footer
+```
+
+Cada parte possui sua própria lógica e estilo.
+
+---
+
+## 🎨 Estilização com CSS
+
+## 🔹 CSS tradicional
+
+```css id="bmlg5v"
+.card {
+  background: #eee;
+  padding: 20px;
+}
+```
+
+Uso:
+
+```jsx id="88w4k2"
+import "./Card.css";
+
+function Card() {
+  return <div className="card">Card</div>;
+}
+```
+
+---
+
+## ⚛️ CSS Modules
+
+Evita conflito entre estilos.
+
+```text id="z9vv3h"
+Card.module.css
+```
+
+Uso:
+
+```jsx id="2rrmq5"
+import styles from "./Card.module.css";
+
+<div className={styles.card}>Card</div>
+```
+
+---
+
+## 💨 TailwindCSS
+
+Framework muito usado no React.
+
+Exemplo:
+
+```jsx id="sl8e7f"
+<div className="bg-black text-white p-4 rounded">
+  Card
+</div>
+```
+
+---
+
+## 📱 Layout Responsivo
+
+React normalmente utiliza:
+
+* Flexbox
+* Grid
+* Media Queries
+
+Exemplo:
+
+```css id="2y4b31"
+.container {
+  display: flex;
+  gap: 20px;
+}
+```
+
+---
+
+## 🧩 Exemplo de Interface
+
+```jsx id="i7bpr9"
+function Dashboard() {
+  return (
+    <div>
+      <Navbar />
+      <Sidebar />
+      <Content />
+    </div>
+  );
+}
+```
+
+---
+
+## ✅ Benefícios
+
+* Organização visual
+* Componentes reutilizáveis
+* Responsividade
+* Interfaces modernas
+
+---
+
+## ✅ Resumo
+
+No React, interfaces são montadas com componentes reutilizáveis e estilizadas com CSS, CSS Modules ou frameworks como TailwindCSS, facilitando a criação de aplicações modernas e responsivas.
+# Aula 48 - Integração com back-end (API)
+## 🔗 Integração React.js com Backend
+
+No React, o frontend se comunica com o backend através de APIs REST usando requisições HTTP.
+
+O React envia e recebe dados do servidor para:
+
+* Listar informações
+* Criar registros
+* Atualizar dados
+* Remover informações
+
+---
+
+## 🌐 Consumindo API REST
+
+Normalmente usamos:
+
+* `fetch`
+* ou `axios`
+
+---
+
+## 📦 Exemplo com `fetch`
+
+Backend Node.js:
+
+```text id="0j6w6u"
+GET http://localhost:3000/usuarios
+```
+
+Frontend React:
+
+```jsx id="jq5f2n"
+import { useEffect, useState } from "react";
+
+function Usuarios() {
+  const [usuarios, setUsuarios] = useState([]);
+
+  useEffect(() => {
+    fetch("http://localhost:3000/usuarios")
+      .then((res) => res.json())
+      .then((data) => setUsuarios(data));
+  }, []);
+
+  return (
+    <div>
+      {usuarios.map((usuario) => (
+        <p key={usuario.id}>{usuario.nome}</p>
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+## ✍️ Enviando Dados para API
+
+```jsx id="2x58n0"
+fetch("http://localhost:3000/usuarios", {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    nome: "Rafael"
+  })
+});
+```
+
+---
+
+## ⚠️ CORS
+
+Para permitir acesso do React ao backend, o Express precisa liberar CORS.
+
+Instale:
+
+```bash id="crvkhl"
+npm install cors
+```
+
+Backend:
+
+```js id="0ggbdf"
+const cors = require("cors");
+
+app.use(cors());
+```
+
+---
+
+## 🧩 Estrutura Recomendada
+
+```text id="x1p5e1"
+src/
+├── components/
+├── pages/
+├── services/
+│   └── api.js
+```
+
+---
+
+## 📦 Centralizando API
+
+```jsx id="hvr0k4"
+const API_URL = "http://localhost:3000";
+```
+
+---
+
+## ✅ Benefícios
+
+* Frontend separado do backend
+* Comunicação via API REST
+* Aplicações escaláveis
+* Integração com qualquer backend
+
+---
+
+## ✅ Resumo
+
+O React consome APIs REST para integrar o frontend ao backend, permitindo criar aplicações completas e dinâmicas usando requisições HTTP.
+
+
+
+
+
+
+
+# Aula 49 - AWS - Servidor para o front
+## 🌐 Subindo Frontend React na AWS EC2
+
+Após criar o frontend em React, podemos hospedar a aplicação em uma instância EC2 da Amazon Web Services.
+
+---
+
+## 🔐 1. Conectar via SSH
+
+```bash id="o7wfdr"
+ssh -i chave.pem ubuntu@IP_DA_INSTANCIA
+```
+
+---
+
+## 📦 2. Instalar Node.js e Git
+
+```bash id="jml0ml"
+sudo apt update
+sudo apt install nodejs npm git -y
+```
+
+---
+
+## 📂 3. Clonar projeto React
+
+```bash id="mk9is0"
+git clone https://github.com/usuario/frontend.git
+cd frontend
+```
+
+---
+
+## 📦 4. Instalar dependências
+
+```bash id="j73nli"
+npm install
+```
+
+---
+
+## ⚙️ 5. Gerar build de produção
+
+```bash id="i5bh2y"
+npm run build
+```
+
+Será criada a pasta:
+
+```text id="x7i4x6"
+dist/
+```
+
+---
+
+## ▶️ 6. Servir aplicação
+
+Instale:
+
+```bash id="bw2df8"
+npm install -g serve
+```
+
+Execute:
+
+```bash id="pqjlwm"
+serve -s dist -l 3000
+```
+
+---
+
+## 🌐 7. Liberar porta no Security Group
+
+Na AWS:
+
+* EC2 → Security Groups
+* Liberar porta `3000`
+
+---
+
+## 🧪 8. Testar no navegador
+
+```text id="krw5vb"
+http://IP_PUBLICO:3000
+```
+
+---
+
+## ♻️ Opcional: manter aplicação ativa
+
+```bash id="3wdgwc"
+npm install -g pm2
+pm2 start "serve -s dist -l 3000"
+```
+
+---
+
+## ✅ Resumo
+
+O frontend React pode ser hospedado na EC2 gerando uma build de produção e servindo os arquivos estáticos pela internet.
+# Aula 50 - AWS - Liberando portas de acesso
+## 🌐 Liberando Portas e Ativando HTTPS na AWS EC2
+
+Após subir o frontend na instância EC2 da Amazon Web Services, precisamos liberar as portas web e configurar HTTPS com SSL.
+
+---
+
+## 🔓 1. Liberar portas no Security Group
+
+No painel AWS:
+
+* EC2 → Instances
+* Selecionar instância
+* Security → Security Group
+* Edit inbound rules
+
+Adicionar regras:
+
+| Tipo  | Porta |
+| ----- | ----- |
+| HTTP  | 80    |
+| HTTPS | 443   |
+
+Origem:
+
+```text id="9im1g4"
+0.0.0.0/0
+```
+
+Salvar regras.
+
+---
+
+## 🌐 2. Instalar NGINX
+
+Conecte via SSH:
+
+```bash id="bw9e33"
+ssh -i chave.pem ubuntu@IP_DA_INSTANCIA
+```
+
+Instale:
+
+```bash id="6j1r1w"
+sudo apt update
+sudo apt install nginx -y
+```
+
+---
+
+## ▶️ 3. Iniciar NGINX
+
+```bash id="wjlwmv"
+sudo systemctl start nginx
+sudo systemctl enable nginx
+```
+
+Teste no navegador:
+
+```text id="h1yr3z"
+http://IP_PUBLICO
+```
+
+---
+
+## ⚙️ 4. Configurar proxy para React
+
+Editar configuração:
+
+```bash id="djlwm0"
+sudo nano /etc/nginx/sites-available/default
+```
+
+Exemplo:
+
+```nginx id="ig9xjr"
+server {
+    listen 80;
+
+    location / {
+        proxy_pass http://localhost:3000;
+    }
+}
+```
+
+Salvar e reiniciar:
+
+```bash id="4qfjlwm"
+sudo systemctl restart nginx
+```
+
+---
+
+## 🔐 5. Instalar SSL HTTPS
+
+Instalar Certbot:
+
+```bash id="d2gnlb"
+sudo apt install certbot python3-certbot-nginx -y
+```
+
+Executar:
+
+```bash id="qjlwmu"
+sudo certbot --nginx
+```
+
+Informar:
+
+* Domínio do site
+* E-mail
+* Aceitar termos
+
+---
+
+## 🌍 6. Testar HTTPS
+
+Após configuração:
+
+```text id="0lixc6"
+https://seudominio.com
+```
+
+O cadeado HTTPS aparecerá automaticamente.
+
+---
+
+## ♻️ Renovação automática
+
+Testar renovação:
+
+```bash id="o2y3c5"
+sudo certbot renew --dry-run
+```
+
+---
+
+## ✅ Resumo
+
+Com Security Groups, NGINX e SSL, sua aplicação React fica acessível publicamente usando HTTPS seguro e profissional.
+# Aula 51 - Atribuindo um Domínio (AWS Route53 e DuckDNS)
+## 🌍 Configurando Domínio DNS para sua EC2
+
+Após subir a aplicação na EC2 da Amazon Web Services, podemos conectar um domínio para acessar o sistema por um endereço amigável.
+
+Exemplo:
+
+```text id="brvvrx"
+https://meusistema.com
+```
+
+---
+
+## 🟠 Opção 1: Usando Route53 (AWS)
+
+O Amazon Route 53 é o serviço DNS da AWS.
+
+---
+
+## 🔹 1. Registrar domínio
+
+Na AWS:
+
+* Route53 → Registered Domains
+* Registrar domínio desejado
+
+---
+
+## 🔹 2. Criar Hosted Zone
+
+* Route53 → Hosted Zones
+* Create Hosted Zone
+
+Exemplo:
+
+```text id="b7mjlwm"
+meusistema.com
+```
+
+---
+
+## 🔹 3. Criar registro DNS
+
+Adicionar registro:
+
+| Tipo | Valor     |
+| ---- | --------- |
+| A    | IP da EC2 |
+
+Exemplo:
+
+```text id="rxjlwm0"
+3.92.123.100
+```
+
+---
+
+## 🔹 4. Testar domínio
+
+Após propagação:
+
+```text id="97mp3m"
+http://meusistema.com
+```
+
+---
+
+## 🟢 Opção 2: DuckDNS (Gratuito)
+
+DuckDNS é uma alternativa gratuita para testes e estudos.
+
+---
+
+## 🔹 1. Criar subdomínio
+
+Acesse:
+
+* [DuckDNS](https://www.duckdns.org?utm_source=chatgpt.com)
+
+Criar:
+
+```text id="2jlwmf"
+meuprojeto.duckdns.org
+```
+
+---
+
+## 🔹 2. Informar IP da EC2
+
+No painel DuckDNS:
+
+* Adicionar IP público da instância
+
+---
+
+## 🔹 3. Testar acesso
+
+```text id="1jlwmn"
+http://meuprojeto.duckdns.org:3000
+```
+
+---
+
+## 🔐 HTTPS com DuckDNS
+
+Também é possível usar SSL com Certbot:
+
+```bash id="mjlwm7"
+sudo certbot --nginx
+```
+
+---
+
+## ✅ Resumo
+
+* Route53 → solução profissional da AWS
+* DuckDNS → alternativa gratuita para estudos e testes
+
+Ambos permitem acessar aplicações por domínio ao invés de IP.
+
+
+# Links
+
+[Roadmap do bootcamp](https://roadmap.sh/r/bootcamp-fullstack-foundations)
+
+[Livros acadêmicos para computação](https://www.amazon.com.br/hz/wishlist/ls/2VSWFNISET66E?ref_=wl_share)
+
+[Livros de tecnologias](https://www.amazon.com.br/hz/wishlist/ls/3U0KR1AKJ8K74?ref_=wl_share)
+
+[Livros sobre filosofia e computação](https://www.amazon.com.br/hz/wishlist/ls/2GQEVCK3HKHKX?ref_=wl_share)
+
+[Canal do Youtube do Levi com conteúdo técnico](https://www.youtube.com/rafaellevissa)
+
+[Artigos do Levi no Medium](https://medium.com/@rafaellevissa)
+
+[Instagram do Levi](https://www.instagram.com/rafaellevissa/)
